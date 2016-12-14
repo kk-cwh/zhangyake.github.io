@@ -5,10 +5,10 @@
 ## About Page: `hexo new page about`
 ## Tags Cloud Page: `hexo new page tags`
 menu:
-  主页: /
-  所有文章: /archives/
-  音乐欣赏: /tags/music
   标签云: /tags/
+  所有文章: /archives/
+  我的读书: /Home/
+  音乐欣赏: /tags/music
   关于我: /about/
 
 # Link to your avatar | 填写头像地址
@@ -27,7 +27,7 @@ subnav:
   新浪微博: "http://weibo.com/jaakzh"
   GitHub: "https://github.com/yake987"
   #V2EX: "#"
-  知乎: "https://www.zhihu.com/people/"
+  知乎: "https://www.zhihu.com/people/jaakzh"
   RSS: "/atom.xml"
   #豆瓣: "douban"
   #Facebook: "#"
