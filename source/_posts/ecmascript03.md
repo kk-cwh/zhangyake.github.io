@@ -2,6 +2,7 @@ title: JS中的 call与apply方法 以及 bind方法
 date: 2016-01-30 14:28:25
 tags: JavaScript
 original: false
+categories: 前端
 ---
 
 call 与apply 类似 都是与函数相关的方法，

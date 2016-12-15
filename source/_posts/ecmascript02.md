@@ -2,6 +2,7 @@ title: JS中特殊的对象arguments
 date: 2016-01-24 16:58:11
 tags: JavaScript
 original: false
+categories: 前端
 ---
 **arguments对象**
 在函数代码中，才可使用特殊对象 arguments，arguments对象不能显式创建。函数的 arguments 对象并不是一个数组，但是访问单个参数的方式与访问数组元素的方式相同。访问函数中的第n个参数 则可以使用arguments[n-1] 

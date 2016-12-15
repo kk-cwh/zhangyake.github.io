@@ -1,5 +1,5 @@
-title: 关于我
-date: 2015-10-14 15:14:25
+title: "关于"
+layout: "page"
 ---
 
 

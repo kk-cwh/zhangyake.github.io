@@ -2,7 +2,8 @@ title: Hexo入住
 date: 2015-10-13 15:15:02
 tags: Hexo
 original: false
-comments: true
+categories: 工具
+thumbnail:
 ---
 #### 什么是 Hexo？
 

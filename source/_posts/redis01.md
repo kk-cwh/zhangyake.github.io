@@ -2,6 +2,7 @@ title: redis 命令学习(一)
 date: 2015-11-24 20:11:07
 tags: redis
 original: false
+categories: 数据库
 ---
 #### String操作命令
 String 是 redis 中最基础的数据类型， redis 字符串是二进制安全的，这意味着他们有一个已知的长度没有任何特殊字符终止，所以你可以存储任何东西，512兆为上限。

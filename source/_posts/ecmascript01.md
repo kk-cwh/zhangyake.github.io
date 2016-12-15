@@ -2,6 +2,7 @@ title: JavaScript类型转换
 date: 2015-12-19 20:59:54
 tags: JavaScript
 original: false
+categories: 前端
 ---
 #### 一、类型介绍
  JavaScript中，共有6种类型，其中5种是基本类型，1种复杂类型。

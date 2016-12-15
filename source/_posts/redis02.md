@@ -2,6 +2,7 @@ title: redis命令学习(二)
 date: 2015-11-27 15:45:51
 tags: redis
 original: false
+categories: 数据库
 ---
 #### 列表(Lists)操作命令
 　　Redis列表是简单的字符串列表，按照插入顺序排序。

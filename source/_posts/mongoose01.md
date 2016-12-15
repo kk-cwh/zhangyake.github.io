@@ -2,6 +2,7 @@ title: mongoose简单总结
 date: 2015-11-16 10:25:40
 tags: mongoose
 original: false
+categories: 后端
 ---
 
 工作一年多了,一直再用node.js和PHP写后端. node.js写后端 数据库用mongodb ,第三方数据库操作模块就用的mongoose,在此总结一下mongoose的基本使用

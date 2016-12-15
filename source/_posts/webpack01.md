@@ -1,7 +1,8 @@
 title: webpack入门
 date: 2016-03-30 11:12:42
-tags: 前端
+tags: webpack
 original: false
+categories: 工具
 ---
 
 #### 什么是 webpack？

@@ -2,6 +2,7 @@ title: js 深浅拷贝 &&  js 函数参数传递
 date: 2016-02-20 10:02:45
 tags: JavaScript
 original: false
+categories: 前端
 ---
 #### 浅拷贝
 我所理解的 javascript中的数组或者对象的浅拷贝 是增加了一个指向同一个内存地址的变量;由于指向的内存地址相同,改变任一变量的值,会引起另一变量跟随变化。

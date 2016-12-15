@@ -1,12 +1,9 @@
 title: CSS笔记
-<<<<<<< HEAD
-date: 2016-10-13 15:15:02
-=======
 date: 2016-10-06 16:11:52
->>>>>>> 9e5347c73fb0be50ca671032ef443be1a41a2eeb
 tags: CSS
 original: false
 comments: true
+categories: 前端
 ---
 #### CSS 样式基本知识
 - 直接写在html标签中的样式 ，**内联式css样式**   eg：

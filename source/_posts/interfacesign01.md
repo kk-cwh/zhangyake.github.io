@@ -1,7 +1,8 @@
 title: 接口签名学习(一)
 date: 2016-05-13 15:36:48
-tags: 后端开发
+tags: node
 original: false
+categories: 后端
 ---
 
 #### 接口签名
