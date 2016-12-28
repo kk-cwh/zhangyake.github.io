@@ -4,6 +4,7 @@ tags: PHP
 original: false
 comments: true
 categories: 后端
+thumbnail: http://7xqeyw.com1.z0.glb.clouddn.com/898935221173953867.jpg
 ---
 #### 工厂模式
 简单来说工厂模式就是讲new操作封装在了工厂方法里，避免到处new某个对象。

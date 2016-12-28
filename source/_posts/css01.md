@@ -4,6 +4,7 @@ tags: CSS
 original: false
 comments: true
 categories: 前端
+thumbnail: http://7xqeyw.com1.z0.glb.clouddn.com/515151842224185402.jpg
 ---
 #### CSS 样式基本知识
 - 直接写在html标签中的样式 ，**内联式css样式**   eg：
