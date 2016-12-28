@@ -16,6 +16,7 @@ categories: 后端
 
 这里自己写了一个node版本的生成sign的函数(代码写的不好,欢迎吐槽)，同时发布到了npm上https://www.npmjs.com/package/getsignature
 
+```
     var crypto = require('crypto');
     var util = require('util');
     function getsignature(paramObject, secretKey) {
@@ -40,12 +41,14 @@ categories: 后端
       return '';
     }
     module.exports = getsignature;
-
+```
 **安装**
-
+```
     $ npm install getsignature
+```
 **示例**
-    
+   
+``` 
     var getsignature = require('getsignature');
     // 生成签名所用参数 （调用外部接口要发送的参数）
     var params = { 'name':'abc','age':24,'sex':1 };
@@ -55,11 +58,12 @@ categories: 后端
     var signature = getsignature(params, secretKey);
     console.log(signature); 
     // '71A9D9D21A122E287DA3051A9573F313'
-
+```
 #### 签名验证方法
 根据前面描述的签名参数sign生成的方法规则，计算得到参数的签名值，和参数中通知过来的sign对应的参数值进行对比，如果是一致的，那么就校验通过，如果不一致，说明参数被修改过。
 示例:（假定上方的node系统调用的是一个php接口）
     
+  ```  
     <?php
       $secretKey = 'abcdef';//先前约定好的秘钥
       //接受到的参数不包含sign参数 放进一个数组中
@@ -84,6 +88,7 @@ categories: 后端
       }
       //比较签名是否一致
       echo (getSignature($param, $secretKey) == $sign )?'签名有效':'参数被修改过';
+```
 
 参考文档:http://kf.qq.com/faq/120322fu63YV130422aqUNJv.html
 参考文档:http://www.tuicool.com/articles/jQJV3i

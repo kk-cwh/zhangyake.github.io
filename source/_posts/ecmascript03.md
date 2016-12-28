@@ -17,34 +17,40 @@ function.call(obj,args. . .);
 如果obj参数为null，则使用全局对象。
 使用call or apply方改变函数的作用域的好处 就是对象不需要与方法有任何的耦合关系, 参数obj为不同的对象 返回值可能就随对象obj的而定
 
-        var a=10,b=11;
-        function add(x,y){
-            if(x && y){
-                return x+y;
-              }
-            return this.a + this.b;
-        }
-        var obj={a:1,b:2}
-        add();
-        //21
-        add(2,3);
-        //5
-        add.call(obj);
-        //3
-        add.call(obj,2,4);
-        //6
-        add.apply(obj);
-        //3
-        add.apply(obj,[3,4,5]);
-        //7
+```
+var a=10,b=11;
+function add(x,y){
+    if(x && y){
+        return x+y;
+      }
+    return this.a + this.b;
+}
+var obj={a:1,b:2}
+add();
+//21
+add(2,3);
+//5
+add.call(obj);
+//3
+add.call(obj,2,4);
+//6
+add.apply(obj);
+//3
+add.apply(obj,[3,4,5]);
+//7
+```
+
 3. bind( )也是函数的一个方法,这个方法会返回一个作为方法调用的函数，其this值会被绑定到传给bind( )函数的值;
  
-        var name = 'Jaak';
-        var word = 'Hello';
-        function say(){
-            alert(this.name+" say "+this.word);
-         }
-         say();
-         var p = {name:'Tom',word:'Hi'};
-         var sayp = say.bind(p);
-         sayp(); //chrome浏览器中运行 查看结果
+
+```
+var name = 'Jaak';
+var word = 'Hello';
+function say(){
+    alert(this.name+" say "+this.word);
+ }
+ say();
+ var p = {name:'Tom',word:'Hi'};
+ var sayp = say.bind(p);
+ sayp(); //chrome浏览器中运行 查看结果
+```
