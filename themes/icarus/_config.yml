@@ -21,7 +21,7 @@ customize:
         author_title: Web Developer
         location: 上海 , 中国
         follow: https://github.com/zhangyake/
-    highlight: monokai
+    highlight: androidstudio
     sidebar: right # sidebar position, options: left, right
     thumbnail: true # enable posts thumbnail, options: true, false
     favicon: css/images/logo.png # path to favicon
@@ -57,7 +57,7 @@ comment:
     youyan: # enter youyan uid here
 
 # Share
-share: default # options: jiathis, bdshare, addtoany, default
+share: addtoany # options: jiathis, bdshare, addtoany, default
 
 # Plugins
 plugins:
