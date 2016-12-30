@@ -7,9 +7,7 @@ categories: 后端
 thumbnail: http://7xqeyw.com1.z0.glb.clouddn.com/281539080765117436.jpg
 ---
 #### 适配器模式
-适配器模式就是定义一个适配器接口，符合这些适配器的类必须继承并实现适配器方法。
-适配器模式简单的说就是将不同的函数接口封装成统一的API。
-实际应用举例,PHP的数据库操作有mysql,mysqli,pdo 三种,mysql操作 PHP7已经废弃了推荐用mysqli,pdo 代替。可以用适配器模式统一成一致. 类似的场景还有cache适配器,将memcache,redis,file,apc等不同的缓存函数,统一成一致，比如目前比较优雅的一个PHP框架  [laravel](http://www.golaravel.com/laravel/) 中的缓存的使用就是这样，不论是使用redis还是用memcache作为缓存，使用的方法都是一致的。
+适配器模式就是定义一个适配器接口，符合这些适配器的类必须继承并实现适配器方法。适配器模式简单的说就是将不同的函数接口封装成统一的API。实际应用的例子比如,PHP的数据库操作有mysql,mysqli,pdo 三种,(mysql操作 PHP7已经废弃了推荐用mysqli,pdo 代替),可以用适配器模式统一成一致(见下面代码示例). 类似的场景还有cache适配器,将memcache,redis,file,apc等不同的缓存函数,统一成一致，比如目前比较优雅的一个PHP框架  [laravel](http://www.golaravel.com/laravel/) 中的缓存的使用就是这样，不论是使用redis还是用memcache作为缓存，使用的方法都是一致的。
 <!-- more -->
 ```
 //定义一个适配器接口
