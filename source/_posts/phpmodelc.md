@@ -1,5 +1,5 @@
 title: PHP中的设计模式学习（C）
-date: 2016-01-04 16:11:28
+date: 2017-01-04 16:11:28
 tags: PHP
 original: false
 comments: true
@@ -27,7 +27,7 @@ abstract public void update ( SplSubject $subject )
 }
 ```
 具体实现代码示例：
-
+<!-- more -->
 ```
 // 被观察者类的实现
 class Subject implements \SplSubject
