@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 攻城狮的一片田
+title: THIS SPACE
 subtitle:
 description:
 author: jaak
-language: zh-Hans
+language: zh-CN
 timezone:
 
 # URL
@@ -57,13 +57,13 @@ time_format: HH:mm:ss
 
 # Pagination
 ## Set per_page to 0 to disable pagination
-per_page: 6
+per_page: 5
 pagination_dir: page
 
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: icarus
+theme: anatole
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html

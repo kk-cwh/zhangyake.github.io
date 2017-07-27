@@ -3,20 +3,37 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "3.2.2"
+    "version": "3.3.8"
   },
   "dependencies": {
     "hexo": "^3.1.0",
     "hexo-deployer-git": "0.0.4",
-    "hexo-generator-archive": "^0.1.2",
+    "hexo-generator-archive": "^0.1.4",
     "hexo-generator-category": "^0.1.2",
     "hexo-generator-feed": "^1.0.3",
     "hexo-generator-index": "^0.1.2",
     "hexo-generator-json-content": "^3.0.1",
     "hexo-generator-tag": "^0.1.1",
     "hexo-renderer-ejs": "^0.1.0",
+    "hexo-renderer-jade": "^0.4.1",
     "hexo-renderer-marked": "^0.2.4",
+    "hexo-renderer-sass": "^0.3.2",
     "hexo-renderer-stylus": "^0.3.0",
     "hexo-server": "^0.1.2"
-  }
+  },
+  "description": "hexo blog codes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangyake/zhangyake.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhangyake/zhangyake.github.io/issues"
+  },
+  "homepage": "https://github.com/zhangyake/zhangyake.github.io#readme"
 }

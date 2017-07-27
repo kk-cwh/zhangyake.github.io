@@ -5,6 +5,9 @@ original: false
 comments: true
 categories: 后端
 thumbnail: http://7xqeyw.com1.z0.glb.clouddn.com/281539080765117436.jpg
+photo:
+- http://7xqeyw.com1.z0.glb.clouddn.com/20160905-ukraine-map-1422625.jpg
+
 ---
 #### 观察者模式
 观察者模式定义了对象间的一种一对多的依赖关系。以便一个对象的状态发生变化后，所有依赖它的对象都得到通知并自动刷新。该模式必须包含两个角色：观察者和被观察对象。观察者和被观察者之间存在**观察**的逻辑关联，当被观察者发生改变的时候，观察者就会观察到这样的变化，并且做出相应的响应。

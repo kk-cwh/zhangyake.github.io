@@ -5,6 +5,8 @@ original: false
 comments: true
 categories: 分享
 thumbnail: http://7xqeyw.com1.z0.glb.clouddn.com/281539080765117436.jpg
+photo:
+- http://7xqeyw.com1.z0.glb.clouddn.com/20160825-stock-photo-125631967.jpg
 ---
 你是不是听到好听的歌曲总想点击下载，可时当你点击下载时却不能下载。这里提供一个解决方案，基本上网易云音乐啊，QQ音乐什么的 ，其他的酷狗，酷我音乐也类似 . 这里介绍一下网易云音乐和QQ音乐中一些歌曲点击下载时却不能下载小技巧。这里推荐使用Chrome浏览器吧，其他的也可以，不要告诉我你还在用IE 。*------ 关爱前端程序员,请使用现代浏览器。*
  <!-- more -->

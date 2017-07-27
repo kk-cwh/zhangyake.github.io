@@ -5,6 +5,8 @@ original: false
 comments: true
 categories: 后端
 thumbnail: http://7xqeyw.com1.z0.glb.clouddn.com/281539080765117436.jpg
+photos:
+ - http://7xqeyw.com1.z0.glb.clouddn.com/201611-ipad-605420_1920.jpg
 ---
 1. [xdebug网站](https://xdebug.org/download.php)下载对应版本的扩展插件
 由于windows7(64位系统)上的php版本是7.0.6，此处下载的xdebug也是64位7.0的版本如图：
