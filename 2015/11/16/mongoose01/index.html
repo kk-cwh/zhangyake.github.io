@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="天空之城,zhangykvip@126.com"><title>mongoose简单总结 · THIS SPACE</title><meta name="description" content="工作一年多了,一直再用node.js和PHP写后端. node.js写后端 数据库用mongodb ,第三方数据库操作模块就用的mongoose,在此总结一下mongoose的基本使用
+Mongoose是什么Mongoose是MongoDB的一个对象模型工具，是基于node-mongodb-nati"><meta name="keywords" content="Hexo,HTML,CSS,php,Python,Node.js"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.gif" style="width:127px; border-radius: 100px;"><h3 title=""><a href="/">THIS SPACE</a></h3><div class="description"><p>live a good life.</p></div></div></div><ul class="social-links"><li><a href="/atom.xml"><i class="fa fa-rss"></i></a></li><li><a href="http://weibo.com/http://weibo.com/jaakzh"><i class="fa fa-weibo"></i></a></li><li><a href="http://github.com/https://github.com/zhangyake/"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=0 height=0 src="//music.163.com/outchain/player?type=2&id=410042763&auto=1&height=66"></iframe></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/about">关于</a></li><li><a href="/archives">归档</a></li><li><a href="/links">友链</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"> </a></li></div><div class="avatar"><img src="/images/favicon.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>mongoose简单总结</a></h3></div><div class="post-content"><p>工作一年多了,一直再用node.js和PHP写后端. node.js写后端 数据库用mongodb ,第三方数据库操作模块就用的mongoose,在此总结一下mongoose的基本使用</p>
+<h4 id="Mongoose是什么"><a href="#Mongoose是什么" class="headerlink" title="Mongoose是什么"></a>Mongoose是什么</h4><p>Mongoose是MongoDB的一个对象模型工具，是基于node-mongodb-native开发的MongoDB nodejs驱动，可以在异步的环境下执行。同时它也是针对MongoDB操作的一个对象模型库，封装了MongoDB对文档的的一些增删改查等常用方法，让NodeJS操作Mongodb数据库变得更加灵活简单。<br><a id="more"></a></p>
+<h4 id="Mongoose能做什么"><a href="#Mongoose能做什么" class="headerlink" title="Mongoose能做什么"></a>Mongoose能做什么</h4><p>Mongoose，因为封装了对MongoDB对文档操作的常用处理方法，让NodeJS操作Mongodb数据库变得easy、easy、So easy!</p>
+<h4 id="Mongoose使用"><a href="#Mongoose使用" class="headerlink" title="Mongoose使用"></a>Mongoose使用</h4><h5 id="安装mongoose"><a href="#安装mongoose" class="headerlink" title="安装mongoose"></a>安装mongoose</h5><pre><code>npm install mongoose
+</code></pre><h5 id="引用mongoose"><a href="#引用mongoose" class="headerlink" title="引用mongoose"></a>引用mongoose</h5><pre><code>var mongoose = require(&quot;mongoose&quot;);
+</code></pre><h5 id="使用”mongoose”连接数据库"><a href="#使用”mongoose”连接数据库" class="headerlink" title="使用”mongoose”连接数据库"></a>使用”mongoose”连接数据库</h5><pre><code>var db = mongoose.connect(&quot;mongodb://user:pass@localhost:port/database&quot;); 
+</code></pre><p>执行下面代码检查默认数据库test，是否可以正常连接成功</p>
+<pre><code>var mongoose = require(&quot;mongoose&quot;);
+var db = mongoose.connect(&quot;mongodb://127.0.0.1:27017/test&quot;);
+db.connection.on(&quot;error&quot;, function (error) {
+console.log(&quot;数据库连接失败：&quot; + error);
+});
+db.connection.on(&quot;open&quot;, function () {
+console.log(&quot;------数据库连接成功！------&quot;);
+}); 
+</code></pre><h4 id="名词解释-Schema-Model-Entity"><a href="#名词解释-Schema-Model-Entity" class="headerlink" title="名词解释 Schema,Model,Entity"></a>名词解释 Schema,Model,Entity</h4><p><strong>Schema</strong> —— 一种以文件形式存储的数据库模型骨架，无法直接通往数据库端，也就是说它不具备对数据库的操作能力，仅仅只是数据库模型在程序片段中的一种表现，可以说是数据属性模型(传统意义的表结构)，又或着是“集合”的模型骨架。<br>那如何去定义一个Schema，请看示例：</p>
+<pre><code>var mongoose = require(&quot;mongoose&quot;);
+var TestSchema = new mongoose.Schema({
+          name : { type:String },//属性name,类型为String
+          age  : { type:Number, default:0 },//属性age,类型为Number,默认为0
+          time : { type:Date, default:Date.now },
+          email: { type:String,default:&apos;&apos;}
+    });
+</code></pre><p><strong>Model</strong> —— 由Schema构造生成的模型，除了Schema定义的数据库骨架以外，还具有数据库操作的行为，类似于管理数据库属性、行为的类。<br>通过Schema来创建Model，如下示例：</p>
+<pre><code>var db = mongoose.connect(&quot;mongodb://127.0.0.1:27017/test&quot;);
+    //……
+   // 创建Model
+var TestModel = db.model(&quot;test1&quot;, TestSchema);
+</code></pre><p>拥有了Model，在后面就可以使用Model来进行增删改查的具体操作。</p>
+<pre><code>var TestSchema = new mongoose.Schema({
+       name : { type:String },//属性name,类型为String
+       age  : { type:Number, default:0 },//属性age,类型为Number,默认为0
+       time : { type:Date, default:Date.now },
+        email: { type:String,default:&apos;&apos;}
+  });
+var TestModel = db.model(&quot;test1&quot;, TestSchema);
+</code></pre><p><strong>Entity</strong> —— 由Model创建的实体，使用save方法保存数据，Model和  Entity都有能影响数据库的操作，但Model比Entity更具操作性。<br>使用Model创建Entity，如下示例：</p>
+<pre><code>var TestEntity = new TestModel({
+       name : &quot;jaak&quot;,
+       age  : 25,
+       email: &quot;jaak@qq.com&quot;
+});
+console.log(TestEntity.name); // jaak
+console.log(TestEntity.age); // 25
+</code></pre><h4 id="Schema-Model-Entity-完整示例"><a href="#Schema-Model-Entity-完整示例" class="headerlink" title="Schema Model Entity 完整示例"></a>Schema Model Entity 完整示例</h4><pre><code>var mongoose = require(&quot;mongoose&quot;);
+var db = mongoose.connect(&quot;mongodb://127.0.0.1:27017/test&quot;);
+var TestSchema = new mongoose.Schema({
+    name : { type:String },
+    age  : { type:Number, default:0 },
+    email: { type:String },
+    time : { type:Date, default:Date.now }
+});
+var TestModel = db.model(&quot;test1&quot;, TestSchema );
+var TestEntity = new TestModel({
+    name : &quot;helloworld&quot;,
+    age  : 28,
+    email: &quot;helloworld@qq.com&quot;
+});
+TestEntity.save(function(error,doc){
+  if(error){
+     console.log(&quot;error :&quot; + error);
+  }else{
+     console.log(doc);
+  }
+});
+</code></pre><ul>
+<li>Schema：数据库集合的模型骨架，或者是数据属性模型传统意义的表结构。</li>
+<li>Model ：通过Schema构造而成，除了具有Schema定义的数据库骨架以外，还可以具体的操作数据库。</li>
+<li>Entity：通过Model创建的实体，它也可以操作数据库。<br>Schema、Model、Entity的关系请牢记，Schema生成Model，Model创造Entity，Model和Entity都可对数据库操作造成影响，但Model比Entity更具操作性</li>
+</ul>
+<h4 id="Model-基本的find查询"><a href="#Model-基本的find查询" class="headerlink" title="Model 基本的find查询"></a>Model 基本的find查询</h4><p>使用Model进行基本的find查询： Model.find(查询条件,callback);</p>
+<pre><code>Model.find({},function(error,docs){
+    //若没有向find传递参数，默认的是显示所有文档
+ });
+Model.find({ &quot;age&quot;: 28 }, function (error, docs) {
+   if(error){
+     console.log(&quot;error :&quot; + error);
+   }else{
+     console.log(docs); //docs: age为28的所有文档
+   }
+ }); 
+</code></pre><h4 id="Model-保存方法"><a href="#Model-保存方法" class="headerlink" title="Model 保存方法"></a>Model 保存方法</h4><p> 语法：Model.create(文档数据, callback))<br> 示例 :</p>
+<pre><code>Model.create({ name:&quot;model_create&quot;, age:26}, function(error,doc){
+       if(error) {
+           console.log(error);
+       } else {
+           console.log(doc);
+       }
+   });
+</code></pre><h4 id="Entity-保存方法"><a href="#Entity-保存方法" class="headerlink" title="Entity 保存方法"></a>Entity 保存方法</h4><p>语法 : Entity.save(文档数据, callback))<br>示例:</p>
+<pre><code>var Entity = new Model({name:&quot;entity_save&quot;,age: 27});  
+Entity.save(function(error,doc) {
+    if(error) {
+        console.log(error);
+    } else {
+        console.log(doc);
+    }
+});
+</code></pre><h4 id="Model-数据更新"><a href="#Model-数据更新" class="headerlink" title="Model 数据更新"></a>Model 数据更新</h4><p>  语法 : Model.update(查询条件,更新对象,callback);<br>  示例:</p>
+<pre><code>var conditions = {name : &apos;test_update&apos;};
+var update = {$set : { age : 16 }};
+Model.update(conditions, update, function(error){
+    if(error) {
+        console.log(error);
+    } else {
+        console.log(&apos;Update success!&apos;);
+    }
+});
+</code></pre><h4 id="Model-删除数据"><a href="#Model-删除数据" class="headerlink" title="Model 删除数据"></a>Model 删除数据</h4><p>语法 : Model.remove(查询条件,callback);<br>示例:</p>
+<pre><code>var conditions = { name: &apos;tom&apos; };
+Model.remove(conditions, function(error){
+    if(error) {
+        console.log(error);
+    } else {
+        console.log(&apos;Delete success!&apos;);
+    }
+});
+</code></pre><h4 id="Model-find过滤查询"><a href="#Model-find过滤查询" class="headerlink" title="Model find过滤查询"></a>Model find过滤查询</h4><p>语法 :  属性过滤 Model.find(Conditions,<em>field</em>,callback);<br><em>field</em> 说明：我们只需要把显示的属性设置为大于零的数就可以，当然1是最好理解的_id是默认返回 如果不要显示加上(“_id”:0)<br>但是 对其他不需要显示的属性且不是_id 如果设置为0的话将会抛异常或查询无果。<br>示例：<br>//返回只包含一个键值name、age的所有记录</p>
+<pre><code>Model.find({},{name:1, age:1, _id:0}，function(err,docs){
+   //docs 查询结果集
+})
+</code></pre><h4 id="Model-findOne的基本用法"><a href="#Model-findOne的基本用法" class="headerlink" title="Model findOne的基本用法"></a>Model findOne的基本用法</h4><p>与find相同，但只返回单个文档，也就说当查询到即一个符合条件的数据时，将停止继续查询，并返回查询结果。<br>单条数据查询语法: Model.findOne(Conditions,callback);</p>
+<pre><code>Model.findOne({ age: 27}, function (err, doc){
+    // 查询符合age等于27的第一条数据
+    // doc是查询结果
+ });
+</code></pre><p>findOne方法，只返回第一个符合条件的文档数据。</p>
+<h4 id="Model-findById的基本用法"><a href="#Model-findById的基本用法" class="headerlink" title="Model findById的基本用法"></a>Model findById的基本用法</h4><p>与findOne相同，但它只接收文档的_id作为参数，返回单个文档。<br>单条数据查询语法: Model.findById(_id, callback);</p>
+<pre><code>TestModel.findById(&apos;_id&apos;, function (err, doc){
+ //doc 查询结果文档
+});
+</code></pre><h4 id="Model-条件查询"><a href="#Model-条件查询" class="headerlink" title="Model 条件查询"></a>Model 条件查询</h4><pre><code>&quot;$lt&quot;(小于)，&quot;$lte&quot;(小于等于),&quot;$gt&quot;(大于)，&quot;$gte&quot;(大于等于)，&quot;$ne&quot;(不等于)，&quot;$in&quot;(可单值和多个值的匹配)，&quot;$or&quot;(查询多个键值的任意给定值)，&quot;$exists&quot;(表示是否存在的意思)&quot;$all&quot;
+</code></pre><p><strong>使用$gt(&gt;)、$lt(&lt;)、$lte(&lt;=)、$gte(&gt;=)操作符进行排除性的查询，如下示例</strong></p>
+<pre><code>Model.find({&quot;age&quot;:{&quot;$gt&quot;:18}},function(error,docs){
+   //查询所有nage大于18的数据
+});
+Model.find({&quot;age&quot;:{&quot;$lt&quot;:60}},function(error,docs){
+   //查询所有nage小于60的数据
+});
+Model.find({&quot;age&quot;:{&quot;$gt&quot;:18,&quot;$lt&quot;:60}},function(error,docs){
+   //查询所有nage大于18小于60的数据
+});
+</code></pre><p><strong>$ne(!=)操作符的含义相当于不等于、不包含，查询时我们可通过它进行条件判定，具体使用方法如下</strong></p>
+<pre><code>Model.find({ age:{ $ne:24}},function(error,docs){
+    //查询age不等于24的所有数据
+});
+Model.find({name:{$ne:&quot;tom&quot;},age:{$gte:18}},function(error,docs){
+  //查询name不等于tom、age&gt;=18的所有数据
+});
+</code></pre><p><strong>和$ne操作符相反，$in相当于包含、等于，查询时查找包含于指定字段条件的数据。具体使用方法如下</strong></p>
+<pre><code>Model.find({ age:{ $in: 20}},function(error,docs){
+   //查询age等于20的所有数据
+}); 
+Model.find({ age:{$in:[20,30]}},function(error,docs){
+  //可以把多个值组织成一个数组
+}); 
+</code></pre><p><strong>$or操作符，可以查询多个键值的任意给定值，只要满足其中一个就可返回，用于存在多个条件判定的情况下使用，如下示例</strong></p>
+<pre><code>Model.find({&quot;$or&quot;:[{&quot;name&quot;:&quot;yaya&quot;},{&quot;age&quot;:28}]},function(error,docs){
+  //查询name为yaya或age为28的全部文档
+});
+</code></pre><p><strong>$exists操作符，可用于判断某些关键字段是否存在来进行条件查询。如下示例</strong></p>
+<pre><code>Model.find({name: {$exists: true}},function(error,docs){
+  //查询所有存在name属性的文档
+});
+Model.find({telephone: {$exists: false}},function(error,docs){
+  //查询所有不存在telephone属性的文档
+});
+</code></pre><p><strong>limit的基本用法</strong><br>限制返回数量语法：Model.find(Conditions,fields,<strong>options</strong>,callback);<br>示例：</p>
+<pre><code>Model.find({},null,**{limit:20}**,function(err,docs){
+    console.log(docs);
+});
+</code></pre><p><strong>sort的基本用法</strong><br>对结果排序语法：Model.find(Conditions,fields,options,callback);<br>示例：</p>
+<pre><code>Model.find({},null,{sort:{age:-1}},function(err,docs){
+  //查询所有数据，并按照age降序顺序返回数据docs
+});
+</code></pre><p>sort函数可以将查询结果数据进行排序操作，该函数的参数是一个或多个键/值对，<br>键代表要排序的键名，值代表排序的方向，1是升序，-1是降序</p>
+<p><strong>skip的基本用法</strong><br>跳过数量：find(Conditions,fields,<strong>options</strong>,callback);</p>
+<pre><code>Model.find({},null,**{skip:4}**,function(err,docs){
+    console.log(docs);
+});
+</code></pre><p>如果查询结果数量中少于4个的话，则不会返回任何结果。</p>
+<p><strong>skip limit sort 联合查询 示例</strong></p>
+<pre><code>Model.find({},null,{skip:0,limit:2,sort:{age:1}},function(err,docs){
+ // ...
+});
+</code></pre><h4 id="链式查询"><a href="#链式查询" class="headerlink" title="链式查询"></a>链式查询</h4><p>这种方式相对直接查询，分的比较明细，如果不带 callback，则返回 query，<br>query 表示没有执行的预编译查询语句，该 query 对象执行的方法都将返回自己，<br>只有在执行 exec 方法时才执行查询，而且必须有回调。</p>
+<pre><code>var query = Model
+.find({ age: 24})
+.limit(10)
+.skip(5);
+query.exec(function(err,docs){
+  if(err){
+     //...
+    }else{ 
+     console.log(docs);
+    }
+});
+</code></pre></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2015-11-16</span><i class="fa fa-tag"></i><a href="/categories/后端/" title="后端" class="tag">后端 </a><a href="/tags/mongoose/" title="mongoose" class="tag">mongoose </a></div></div></div></div><div class="share"><div class="evernote"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></div><div class="weibo"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"><a href="http://twitter.com/home?status=,http://zhangyake.github.io/2015/11/16/mongoose01/,THIS SPACE,mongoose简单总结,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a role="navigation" href="/2015/11/24/redis01/" title="redis 命令学习(一)" class="btn">上一篇</a></li><li class="next pagbuttons"><a role="navigation" href="/2015/10/13/article01/" title="Hexo入住" class="btn">下一篇</a></li></ul></div><a id="comments"></a><div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div><script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script><script>var cloudTieConfig = { url: document.location.href, sourceId: '2015/11/16/mongoose01/', productKey: 'zhangykvip@126.com', target: 'cloud-tie-wrapper' };var yunManualLoad = true;Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);</script></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>

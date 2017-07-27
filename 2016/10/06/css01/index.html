@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="天空之城,zhangykvip@126.com"><title>CSS笔记 · THIS SPACE</title><meta name="description" content="CSS 样式基本知识
+直接写在html标签中的样式 ，内联式css样式   eg：
+
+1&amp;lt;p style=&quot;color:red&quot;&amp;gt;这里文字是红色。&amp;lt;/p
+
+写在当前文件中的样式，嵌入式css样式   eg：
+
+12345&amp;lt;style type=&quot;text/css&quot;&amp;gt;sp"><meta name="keywords" content="Hexo,HTML,CSS,php,Python,Node.js"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.gif" style="width:127px; border-radius: 100px;"><h3 title=""><a href="/">THIS SPACE</a></h3><div class="description"><p>live a good life.</p></div></div></div><ul class="social-links"><li><a href="/atom.xml"><i class="fa fa-rss"></i></a></li><li><a href="http://weibo.com/http://weibo.com/jaakzh"><i class="fa fa-weibo"></i></a></li><li><a href="http://github.com/https://github.com/zhangyake/"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=0 height=0 src="//music.163.com/outchain/player?type=2&id=410042763&auto=1&height=66"></iframe></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/about">关于</a></li><li><a href="/archives">归档</a></li><li><a href="/links">友链</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"> </a></li></div><div class="avatar"><img src="/images/favicon.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>CSS笔记</a></h3></div><div class="post-content"><h4 id="CSS-样式基本知识"><a href="#CSS-样式基本知识" class="headerlink" title="CSS 样式基本知识"></a>CSS 样式基本知识</h4><ul>
+<li>直接写在html标签中的样式 ，<strong>内联式css样式</strong>   eg：</li>
+</ul>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p <span class="attribute">style</span>=<span class="string">"color:red"</span>&gt;这里文字是红色。&lt;/p</div></pre></td></tr></table></figure>
+<ul>
+<li>写在当前文件中的样式，<strong>嵌入式css样式</strong>   eg：</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="css"></span></div><div class="line"><span class="selector-tag">span</span>&#123;</div><div class="line"><span class="attribute">color</span>:red;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<ul>
+<li>写在单独的文件中的样式，<strong>外部式css样式</strong> eg：</li>
+</ul>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link <span class="attribute">href</span>=<span class="string">"main.css"</span> <span class="attribute">rel</span>=<span class="string">"stylesheet"</span> <span class="attribute">type</span>=<span class="string">"text/css"</span> /&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>三种样式是有优先级的，他们的优先级：内联式 &gt; 嵌入式 &gt; 外部式（总结来说，就是–就近原则）<br>但是嵌入式&gt;外部式有一个前提：嵌入式css样式的位置一定在外部式的后面</li>
+</ul>
+<h4 id="CSS-选择器"><a href="#CSS-选择器" class="headerlink" title="CSS 选择器"></a>CSS 选择器</h4><ul>
+<li>css样式定义中在{}之前的部分就是“选择器”，“选择器”指明了{}中的“样式”作用于网页中的哪些元素</li>
+<li>标签选择器  就是选择html代码中的标签  <code>&lt;html&gt;、&lt;body&gt;、&lt;h1&gt;、&lt;p&gt;、&lt;img&gt;</code>等</li>
+</ul>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">html标签&#123;css样式代码<span class="comment">;&#125;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>类选择器         <code>为标签设置  class=&quot;类名称&quot;</code>   <code>英文圆点开头</code></li>
+</ul>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.class类名称&#123;css样式代码<span class="comment">;&#125;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>ID选择器器           <code>为标签设置id=&quot;ID名称&quot; 英文井号开头</code></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash">ID名称&#123;css样式代码;&#125;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>子选择器  大于符号(&gt;),用于选择指定标签元素的第一代子元素(儿子s女儿们)</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ul</span> &gt; <span class="selector-tag">li</span>  &#123;<span class="attribute">border</span>:<span class="number">1px</span> solid red;&#125; ul下的子元素li（第一代子元素）加入红色实线边框。</div></pre></td></tr></table></figure>
+<ul>
+<li>包含(后代)选择器 加入空格,用于选择指定标签元素下的后辈元素</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ul</span> &gt; <span class="selector-tag">li</span>  &#123;<span class="attribute">border</span>:<span class="number">1px</span> solid red;&#125; ul下的所有子元素li（所有子后代元素）加入红色实线边框。</div></pre></td></tr></table></figure>
+<ul>
+<li>子选择器（child selector）仅是指它的直接后代，或者你可以理解为作用于子元素的第一代后代。而后代选择器是作用于所有子后代元素。<strong>&gt; 作用于元素的第一代后代，空格作用于元素的所有后代 </strong></li>
+<li>通用选择器  使用一个（*）号指定，它的作用是匹配html中所有标签元素</li>
+</ul>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* &#123;<span class="built_in">color</span>:<span class="built_in">red</span>;&#125; <span class="comment">// html中任意标签元素字体颜色全部设置为红色</span></div></pre></td></tr></table></figure>
+<ul>
+<li><strong>伪类选择符</strong> <code>允许给html不存在的标签（标签的某种状态）设置样式</code>，比如说我们给html中一个标签元素的鼠标滑过的状态来设置字体颜色 <code>a:hover{color:red;}</code></li>
+<li>分组选择符 <code>为html中多个标签元素设置同一个样式</code>时，可以使用分组选择符（，）</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">h1</span>,<span class="selector-tag">span</span>&#123;<span class="attribute">color</span>:red;&#125;  </div><div class="line">它相当于下面两行代码：</div><div class="line"><span class="selector-tag">h1</span>&#123;<span class="attribute">color</span>:red;&#125;</div><div class="line"><span class="selector-tag">span</span>&#123;<span class="attribute">color</span>:red;&#125;</div></pre></td></tr></table></figure>
+<h4 id="CSS的继承-层叠-和特殊性"><a href="#CSS的继承-层叠-和特殊性" class="headerlink" title="CSS的继承 层叠 和特殊性"></a>CSS的继承 层叠 和特殊性</h4><ul>
+<li>继承 - CSS的某些样式是具有继承性的，继承就是子标签继承了上级标签的CSS样式的属性</li>
+<li>特殊性 - 为同一个元素设置了不同的CSS样式代码，那么元素会启用哪一个CSS样式 ，浏览器是根据权值来判断使用哪种css样式的，权值高的就使用哪种css样式 ，权值的规则 ：标签的权值为1，类选择符的权值为10，ID选择符的权值最高为100</li>
+<li>层叠 - 就是在html文件中对于同一个元素可以有多个css样式存在，当有相同权重的样式存在时，会根据这些css样式的前后顺序来决定，处于最后面的css样式会被应用</li>
+<li>重要性 有些特殊的情况需要为某些样式设置具有最高权值，可以使用!important来解决  eg：<code>p{color:red!important;}</code></li>
+</ul>
+<h4 id="CSS格式化排版"><a href="#CSS格式化排版" class="headerlink" title="CSS格式化排版"></a>CSS格式化排版</h4><ul>
+<li>文字排版</li>
+</ul>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"> <span class="attribute">font-family</span>:<span class="string">'宋体'</span>;<span class="comment">// 字体</span></div><div class="line"> <span class="attribute">font-size</span>:<span class="number">14px</span>; <span class="comment">// 字号</span></div><div class="line"> <span class="attribute">color</span>:<span class="number">#fff</span>; <span class="comment">// 颜色</span></div><div class="line"> <span class="attribute">font-weight</span>:bold; <span class="comment">// 粗体</span></div><div class="line"> <span class="attribute">font-style</span>:italic; <span class="comment">// 斜体</span></div><div class="line"> <span class="attribute">text-decoration</span>:underline;<span class="comment">// 下划线</span></div><div class="line"> <span class="attribute">text-decoration</span>:line-through; <span class="comment">// 删除线</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>段落排版</li>
+</ul>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"> <span class="attribute">text-indent</span>:<span class="number">2em</span>;  <span class="comment">// 缩进</span></div><div class="line"> <span class="attribute">line-height</span>:<span class="number">1.5em</span>;<span class="comment">// 行间距（行高）</span></div><div class="line"> <span class="attribute">letter-spacing</span>:<span class="number">50px</span>;<span class="comment">// 中文字间距、字母间距</span></div><div class="line"> <span class="attribute">word-spacing</span>:<span class="number">50px</span>;<span class="comment">// 单词间距设置</span></div><div class="line"> <span class="attribute">text-align</span>:center;<span class="comment">// 对齐</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="元素分类"><a href="#元素分类" class="headerlink" title="元素分类"></a>元素分类</h4><ul>
+<li>块级元素 在html中<code>&lt;div&gt;、 &lt;p&gt;、&lt;h1&gt;、&lt;form&gt;、&lt;ul&gt; 和 &lt;li&gt;</code>就是块级元素。设置display:block就是将元素显示为块级元素， <code>每个块级元素都从新的一行开始，并且其后的元素也另起一行元素的高度、宽度、行高以及顶和底边距都可设置。元素宽度在不设置的情况下，是它本身父容器的100%（和父元素的宽度一致），除非设定一个宽度</code>。</li>
+<li><code>&lt;span&gt;、&lt;a&gt;、&lt;label&gt;、 &lt;strong&gt; 和&lt;em&gt;</code>就是典型的内联元素（行内元素）（inline）元素。当然块状元素也可以通过代码display:inline将元素设置为内联元素，<code>内联元素和其他元素都在一行上；元素的高度、宽度及顶部和底部边距不可设置；元素的宽度就是它包含的文字或图片的宽度，不可改变</code></li>
+<li>内联块状元素（inline-block）就是同时具备内联元素、块状元素的特点，代码 <code>display:inline-block</code> 就是将元素设置为内联块状元素，<code>和其他元素都在一行上；元素的高度、宽度、行高以及顶和底边距都可设置</code></li>
+<li>当为元素（不论之前是什么类型元素，display:none 除外）设置以下 2 个句之一：<code>position : absolute;  float : left 或 float:right</code> 简单来说，只要html代码中出现以上两句之一，元素的display显示类型就会自动变为以 display:inline-block（块状元素）的方式显示，就可以设置元素的 width 和 height </li>
+</ul>
+<h4 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h4><p><img src="http://img.mukewang.com/543b4cae0001b34304300350.jpg" alt="enter image description here"><br><img src="http://img.mukewang.com/539fbb3a0001304305570259.jpg" alt="enter image description here"></p>
+<h4 id="css布局模型"><a href="#css布局模型" class="headerlink" title="css布局模型"></a>css布局模型</h4><ol>
+<li>流动模型（Flow） 流动（Flow）是默认的网页布局模型<br><em>在流动模型下，块状元素都会在所处的包含元素内自上而下按顺序垂直延伸分布，因为在默认状态下，块状元素的宽度都为100%。实际上，块状元素都会以行的形式占据位置</em><br><em>在流动模型下，内联元素都会在所处的包含元素内从左到右水平分布显示</em></li>
+<li>浮动模型 (Float)  float:left; float:right;<br>任何元素在默认情况下是不能浮动的，但可以用 CSS 定义为浮动 比如 float:left;</li>
+<li>层模型（Layer） 层模型有三种形式：</li>
+</ol>
+<ul>
+<li>绝对定位(position: absolute)<br>设置position:absolute(表示绝对定位)，这条语句的作用将元素从文档流中拖出来，然后使用left、right、top、bottom属性相对于其最接近的一个具有定位属性的父包含块进行绝对定位。如果不存在这样的包含块，则相对于body元素，即相对于浏览器窗口。</li>
+<li>相对定位(position: relative)<br>设置position:relative（表示相对定位），它通过left、right、top、bottom属性确定元素在正常文档流中的偏移位置。<code>相对定位</code>完成的过程是首先按static(float)方式生成一个元素(并且元素像层一样浮动了起来)，然后相对于以前的位置移动，移动的方向和幅度由left、right、top、bottom属性确定，<code>偏移前的位置保留不动</code></li>
+<li>固定定位(position: fixed)<br>设置position:fixed 表示固定定位，它的相对移动的坐标是视图（屏幕内的网页窗口）本身。由于视图本身是固定的，它不会随浏览器窗口的滚动条滚动而变化，除非你在屏幕中移动浏览器窗口的屏幕位置，或改变浏览器窗口的显示大小，因此固定定位的元素会始终位于浏览器窗口内视图的某个位置，不会受文档流动影响</li>
+</ul>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2016-10-06</span><i class="fa fa-tag"></i><a href="/categories/前端/" title="前端" class="tag">前端 </a><a href="/tags/CSS/" title="CSS" class="tag">CSS </a></div></div></div></div><div class="share"><div class="evernote"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></div><div class="weibo"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"><a href="http://twitter.com/home?status=,http://zhangyake.github.io/2016/10/06/css01/,THIS SPACE,CSS笔记,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a role="navigation" href="/2016/12/28/phpmodel/" title="PHP中的设计模式学习（A）" class="btn">上一篇</a></li><li class="next pagbuttons"><a role="navigation" href="/2016/05/13/interfacesign01/" title="接口签名学习(一)" class="btn">下一篇</a></li></ul></div><a id="comments"></a><div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div><script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script><script>var cloudTieConfig = { url: document.location.href, sourceId: '2016/10/06/css01/', productKey: 'zhangykvip@126.com', target: 'cloud-tie-wrapper' };var yunManualLoad = true;Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);</script></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
