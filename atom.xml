@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhangyake.github.io/"/>
-  <updated>2017-07-28T02:24:11.584Z</updated>
+  <updated>2017-08-04T08:11:54.818Z</updated>
   <id>http://zhangyake.github.io/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue 分页插件</title>
+    <link href="http://zhangyake.github.io/2017/08/04/vue-page/"/>
+    <id>http://zhangyake.github.io/2017/08/04/vue-page/</id>
+    <published>2017-08-04T10:59:24.000Z</published>
+    <updated>2017-08-04T08:11:54.818Z</updated>
+    
+    <content type="html"><![CDATA[<p>网上的一个vue简单的分页插件</p>
+<iframe width="100%" height="600" src="//jsfiddle.net/fabLdo6h/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;网上的一个vue简单的分页插件&lt;/p&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;600&quot; src=&quot;//jsfiddle.net/fabLdo6h/embedded/&quot; allowfullscreen=&quot;allowfullscreen&quot; framebord
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>微信自动回复，所有好友头像合成。。。</title>
